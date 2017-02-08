@@ -18,13 +18,13 @@ codeBeamer ALM allows you to simply streamline processes, reduce development cos
 This will run a single codeBeamer instance, that accessable via 8080 port on host. This need a mysql container to store codeBeamer data.
 
 You can specify volume storage path
-
-`$ docker run -d -p 8080:8080 --name some-codebeamer --link some-mysql:mysql \
+```
+$ docker run -d -p 8080:8080 --name some-codebeamer --link some-mysql:mysql \
     --volume /your/codebeamer/config:/opt/codebeamer/tomcat/webapps/cb/WEB-INF/classes \
     --volume /your/codebeamer/logs:/opt/codebeamer/tomcat/logs \
     --volume /your/codebeamer/data:/opt/codebeamer/repository \
     cometkim/codebeamer-docker
-`
+```
 
 This will store the codeBeamer data in `/your/codebeamer` on host.  
 Ensure that `/your/codebeamer` is accessible or use `-u some_other_user` parameter with docker run.
