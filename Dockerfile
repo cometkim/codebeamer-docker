@@ -2,7 +2,7 @@ FROM debian:jessie
 
 MAINTAINER Hyeseong Kim <hyeseong.kim@architectgroup.com>
 
-RUN groupadd -r codebeamer && useradd -r -g codebeamer codebeamer
+RUN useradd -r codebeamer
 
 RUN echo "deb http://ftp.debian.org/debian stretch main" > /etc/apt/sources.list.d/jessie-backports.list \
 	&& apt-get update \
@@ -19,7 +19,7 @@ RUN echo "deb http://ftp.debian.org/debian stretch main" > /etc/apt/sources.list
 	&& rm -rf /var/lib/apt/lists/*
 
 RUN mkdir -p /usr/src/codebeamer /opt/codebeamer
-RUN chown codebeamer:codebeamer /usr/src/codebeamer /opt/codebeamer
+RUN chown codebeamer /usr/src/codebeamer /opt/codebeamer
 
 RUN curl https://intland.com/download/8-0-2-linux > /tmp/CB-8.0.2-final-linux.bin
 RUN chmod +x /tmp/CB-8.0.2-final-linux.bin
