@@ -21,12 +21,12 @@ RUN echo "deb http://ftp.debian.org/debian stretch main" > /etc/apt/sources.list
 RUN mkdir -p /usr/src/codebeamer /opt/codebeamer
 RUN chown codebeamer /usr/src/codebeamer /opt/codebeamer
 
-RUN curl https://intland.com/download/8-0-2-linux > /tmp/CB-8.0.2-final-linux.bin
-RUN chmod +x /tmp/CB-8.0.2-final-linux.bin
+RUN curl https://codebeamer.com/cb/displayDocument/CB-8.1.0-RC-20170217-linux.bin?doc_id=1978649 > /tmp/CB-8.1.0-RC-20170217-linux.bin
+RUN chmod +x /tmp/CB-8.1.0-RC-20170217-linux.bin
 RUN { \
 	echo "/usr/src/codebeamer/setup"; \
 	echo "n"; \ 
-} | su codebeamer -c /tmp/CB-8.0.2-final-linux.bin
+} | su codebeamer -c /tmp/CB-8.1.0-RC-20170217-linux.bin
 RUN rm -rf /tmp/*
 
 VOLUME ["/opt/codebeamer/repository", "/opt/codebeamer/tomcat/logs"]
