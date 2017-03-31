@@ -20,7 +20,7 @@ RUN echo "deb http://ftp.debian.org/debian stretch main" > /etc/apt/sources.list
 RUN mkdir -p /usr/src/codebeamer /opt/codebeamer
 RUN chown codebeamer /usr/src/codebeamer /opt/codebeamer
 
-RUN curl https://intland.com/download/8-1-0-linux > /tmp/CB-8.1.0-final-linux.bin
+RUN curl https://intland.com/wp-content/uploads/2017/03/CB-8.1.0-final-linux.bin > /tmp/CB-8.1.0-final-linux.bin
 RUN chmod +x /tmp/CB-8.1.0-final-linux.bin
 RUN { \
 	echo "/usr/src/codebeamer/setup"; \
