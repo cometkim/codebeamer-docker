@@ -24,7 +24,7 @@ RUN curl https://intland.com/download/8-1-0-linux > /tmp/CB-8.1.0-final-linux.bi
 RUN chmod +x /tmp/CB-8.1.0-final-linux.bin
 RUN { \
 	echo "/usr/src/codebeamer/setup"; \
-	echo "n"; \ 
+	echo "n"; \
 } | su codebeamer -c /tmp/CB-8.1.0-final-linux.bin
 RUN rm -rf /tmp/*
 
